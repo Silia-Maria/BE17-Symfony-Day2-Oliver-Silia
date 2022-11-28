@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %} {% block body %} {{parent()}}
+<div class="news-hero">
+    <div class="about-text">
+        <h1>check out our newest Destinations</h1>
+    </div>
+
+</div>
+<div class="container mt-5">
+    {% for dest in destination %}
+    <div class="row">
+        <img src="{{dest.image}}" width="500" class="col-6">
+        <div class="col-6 align-self-center">
+            <h3>{{dest.name}}</h3>
+            <p>{{dest.price}}$ / per Person</p>
+        </div>
+
+    </div>
+    <hr> {% endfor %}
+
+
+</div>
+
+{% endblock %}
