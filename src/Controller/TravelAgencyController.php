@@ -15,4 +15,10 @@ class TravelAgencyController extends AbstractController
             'controller_name' => 'TravelAgencyController',
         ]);
     }
+
+    #[Route('/about', name: 'about')]
+    public function about(): Response
+    {
+        return $this->render('travel_agency/about.html.twig', []);
+    }
 }
