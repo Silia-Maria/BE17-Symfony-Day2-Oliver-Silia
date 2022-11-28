@@ -1,0 +1,79 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Hello TravelAgencyController!
+
+{% endblock %}
+
+{% block body %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .img-thumbnail { width: 70px !important; height: 70px !important; } 
+    .manageProduct {           
+               margin: auto;
+           }
+           td {          
+               text-align: left;
+               vertical-align: middle;
+            }
+           tr {
+               text-align: center;
+           }
+</style>
+
+<div class="example-wrapper">
+
+
+    
+
+     <p class='h2'>Destinations</p>
+            <table class='table table-striped'>
+               <thead class='table-success'>
+                   <tr>
+                        <th>Name</th>
+                       <th>Country</th>
+                       <th>Continent</th>
+                       <th>description</th>
+                       <th>Image</th>
+                       
+                        <th>Action</th>
+                   </tr>
+               </thead>
+            <tbody>
+
+            {% for destination in destinations %}  
+            <tr> 
+            <td>{{destination.name}}</td>
+            <td>{{destination.Country}}</td>
+
+            <td>{{destination.Continent}}</td>
+            <td>{{destination.description}}</td>
+           
+             <td><img class='img-thumbnail' src="{{asset('images/' ~ destination.image)}}" </td>
+             <td><a href='details/{{destination.id}}' ><button class='btn btn-primary btn-sm' type='button'>Details</button></a></td>
+            </tr>
+            </tbody<>
+            {% endfor  %}  
+            
+           
+
+            
+
+
+            
+          
+          
+           
+           </table>
+
+
+    
+    <ul>
+  
+    </ul>
+</div>
+{% endblock %}
